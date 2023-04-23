@@ -1,0 +1,9 @@
+
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="turqueza">#13E3F0</color>
+    <color name="amarillo">#ffff00</color>
+    <color name="turqueza_claro">#996CE7F6</color>
+    <color name="gris">#D9D9D9</color>
+</resources>

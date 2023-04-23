@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TalkingParrot" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/turqueza</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/turqueza_claro</item>
+
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">?android:attr/colorPrimaryDark</item>
+    </style>
+
+    <style name="Theme.TalkingParrot" parent="Base.Theme.TalkingParrot" />
+</resources>
