@@ -13,14 +13,27 @@
         android:theme="@style/Theme.TalkingParrot"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".MainActivity"
             android:exported="true">
+=======
+            android:name=".Temas"
+            android:exported="true" >
+>>>>>>> f4f0527 (Creación de la interfaz TEMAS)
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
+=======
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+        </activity>
+>>>>>>> f4f0527 (Creación de la interfaz TEMAS)
     </application>
 
 </manifest>

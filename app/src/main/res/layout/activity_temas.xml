@@ -1,0 +1,179 @@
+gi<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".Temas">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:text="Textos Preferidos"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="40dp"
+                android:textStyle="bold"
+                ></TextView>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:textSize="20dp"
+                android:text="Titulo del texto"
+                android:layout_margin="20dp"
+                android:textStyle="bold"
+                ></TextView>
+
+            <LinearLayout
+                android:layout_width="370dp"
+                android:layout_height="240dp"
+                android:background="#29E1ED"
+                android:orientation="vertical"
+                android:layout_margin="20dp"
+                >
+
+                <TextView
+                    android:layout_margin="20dp"
+                    android:layout_width="330dp"
+                    android:layout_height="200dp"
+                    android:text="PARRAFO DEL TEXTO PARRAFO DEL TEXTO PARRAFO DEL TEXTO PARRAFO DEL TEXTO"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="20dp"
+                android:orientation="horizontal"
+                android:layout_width="370dp"
+                android:layout_height="35dp"
+                >
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:text="N1"
+                    android:textSize="20dp"
+                    android:background="#CCCCCC"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="30dp"
+                    android:text="Pregunta 1"
+                    android:textSize="20dp"
+                    android:layout_margin="5dp"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="370dp"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:layout_margin="20dp"
+                >
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="IA"
+                    android:background="#CCCCCC"
+                    android:textSize="20dp"
+                    android:layout_margin="5dp"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="90dp"
+                    android:text="RESPUESTA DE LA PREGUNTA DE LA INTELIGENCIA ARTIFICIAL"
+                    android:textSize="20dp"
+                    android:layout_margin="5dp"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="20dp"
+                android:orientation="horizontal"
+                android:layout_width="370dp"
+                android:layout_height="35dp"
+                >
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:text="N1"
+                    android:textSize="20dp"
+                    android:background="#CCCCCC"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="30dp"
+                    android:text="Pregunta 1"
+                    android:textSize="20dp"
+                    android:layout_margin="5dp"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="370dp"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:layout_margin="20dp"
+                >
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="IA"
+                    android:background="#CCCCCC"
+                    android:textSize="20dp"
+                    android:layout_margin="5dp"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="90dp"
+                    android:text="RESPUESTA DE LA PREGUNTA DE LA INTELIGENCIA ARTIFICIAL"
+                    android:textSize="20dp"
+                    android:layout_margin="5dp"
+                    ></TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
