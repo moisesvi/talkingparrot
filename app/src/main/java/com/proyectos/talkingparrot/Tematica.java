@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -35,6 +39,18 @@ public class Tematica extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.frgContenedor, frgAudio).commit();
                 }
                 isFragmentoVisible = !isFragmentoVisible;
+            }
+        });
+
+        //Permite que el texto sea seleccionable
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        clipboard.addPrimaryClipChangedListener(new ClipboardManager.OnPrimaryClipChangedListener() {
+            @Override
+            public void onPrimaryClipChanged() {
+                ClipData clipData = clipboard.getPrimaryClip();
+                ClipData.Item item = clipData.getItemAt(0);
+                String copiedText = item.getText().toString();
+                Toast.makeText(Tematica.this, copiedText, Toast.LENGTH_SHORT).show();
             }
         });
     }
