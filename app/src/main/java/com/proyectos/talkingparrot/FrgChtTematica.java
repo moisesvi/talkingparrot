@@ -2,63 +2,136 @@ package com.proyectos.talkingparrot;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FrgChtTematica#newInstance} factory method to
- * create an instance of this fragment.
- */
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
 public class FrgChtTematica extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    RecyclerView recyclerView;
+    EditText messageEditText;
+    ImageButton sendButton;
+    List<Message> messageList;
+    MessageAdapter messageAdapter;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
+    OkHttpClient client = new OkHttpClient();
 
     public FrgChtTematica() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FrgChtTematica.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FrgChtTematica newInstance(String param1, String param2) {
-        FrgChtTematica fragment = new FrgChtTematica();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_frg_cht_tematica, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        messageList = new ArrayList<>();
+        recyclerView = view.findViewById(R.id.recycler_view);
+        messageEditText = view.findViewById(R.id.message_edit_text);
+        sendButton = view.findViewById(R.id.send_btn);
+
+        messageAdapter = new MessageAdapter(getContext(), messageList);
+        recyclerView.setAdapter(messageAdapter);
+        LinearLayoutManager llm = new LinearLayoutManager(getContext());
+        llm.setStackFromEnd(true);
+        recyclerView.setLayoutManager(llm);
+
+        sendButton.setOnClickListener((v)->{
+            String question= messageEditText.getText().toString().trim();
+            addToChat(question, Message.SENT_BY_ME);
+            messageEditText.setText("");
+            callAPI(question);
+        });
+    }
+
+    private void addToChat(String message, String sentBy) {
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                messageList.add(new Message(message, sentBy));
+                messageAdapter.notifyDataSetChanged();
+                recyclerView.smoothScrollToPosition(messageAdapter.getItemCount());
+            }
+        });
+    }
+
+    private void callAPI(String question) {
+        JSONObject jsonBody = new JSONObject();
+
+        try {
+            jsonBody.put("model", "text-davinci-003");
+            jsonBody.put("prompt", question);
+            jsonBody.put("max_tokens", 4000);
+            jsonBody.put("temperature", 0);
+        } catch (JSONException e){
+            e.printStackTrace();
+        }
+
+        RequestBody body= RequestBody.create(jsonBody.toString(), JSON);
+        Request request = new Request.Builder()
+                .url("https://api.openai.com/v1/completions")
+                .header("Authorization","Bearer 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")
+                .post(body)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                addResponse("Failed to load response due to "+e.getMessage());
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                if(response.isSuccessful()){
+                    try {
+                        assert response.body() != null;
+                        String responseBody = response.body().string(); // Extraer la respuesta como una cadena
+                        JSONObject jsonObject = new JSONObject(responseBody);
+                        JSONArray jsonArray = jsonObject.getJSONArray("choices");
+                        String result = jsonArray.getJSONObject(0).getString("text");
+                        addResponse(result.trim());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    assert response.body() != null;
+                    addResponse("failed to load response due to "+ response.body().string()); // Imprimir la respuesta como una cadena
+                }
+            }
+        });
+    }
+
+    private void addResponse(String response) {
+        addToChat(response, Message.SENT_BY_BOT);
     }
 }
