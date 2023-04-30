@@ -4,8 +4,8 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
         <item name="colorPrimary">@color/turqueza</item>
-        <item name="colorPrimaryDark">#151515</item>
 
+        <item name="colorPrimaryDark">#151515</item>
         <item name="android:windowBackground">?android:attr/colorPrimaryDark</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:statusBarColor">?android:attr/colorPrimaryDark</item>
