@@ -1,4 +1,4 @@
-package com.proyectos.talkingparrot;
+package com.proyectos.talkingparrot.FrgTematica;
 
 import android.os.Bundle;
 
@@ -13,7 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
+
+import com.proyectos.talkingparrot.R;
+import com.proyectos.talkingparrot.Util.Message;
+import com.proyectos.talkingparrot.Util.MessageAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,6 +25,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -40,7 +44,7 @@ public class FrgChtTematica extends Fragment {
     MessageAdapter messageAdapter;
 
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
-    OkHttpClient client = new OkHttpClient();
+    OkHttpClient client = new OkHttpClient.Builder().readTimeout(60, TimeUnit.SECONDS).build();
 
     public FrgChtTematica() {
     }
@@ -86,21 +90,28 @@ public class FrgChtTematica extends Fragment {
     }
 
     private void callAPI(String question) {
+        messageList.add(new Message("...", Message.SENT_BY_BOT));
         JSONObject jsonBody = new JSONObject();
 
         try {
-            jsonBody.put("model", "text-davinci-003");
-            jsonBody.put("prompt", question);
-            jsonBody.put("max_tokens", 4000);
-            jsonBody.put("temperature", 0);
+            jsonBody.put("model","gpt-3.5-turbo");
+            JSONArray messageArr = new JSONArray();
+            JSONObject obj = new JSONObject();
+
+            obj.put("role", "user");
+            obj.put("content", question);
+            messageArr.put(obj);
+
+            jsonBody.put("messages", messageArr);
         } catch (JSONException e){
             e.printStackTrace();
         }
 
         RequestBody body= RequestBody.create(jsonBody.toString(), JSON);
         Request request = new Request.Builder()
-                .url("https://api.openai.com/v1/completions")
-                .header("Authorization","Bearer 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")
+                .url("\n" +
+                        "https://api.openai.com/v1/chat/completions")
+                .header("Authorization","Bearer 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")
                 .post(body)
                 .build();
 
@@ -118,7 +129,9 @@ public class FrgChtTematica extends Fragment {
                         String responseBody = response.body().string(); // Extraer la respuesta como una cadena
                         JSONObject jsonObject = new JSONObject(responseBody);
                         JSONArray jsonArray = jsonObject.getJSONArray("choices");
-                        String result = jsonArray.getJSONObject(0).getString("text");
+                        String result = jsonArray.getJSONObject(0)
+                                        .getJSONObject("message")
+                                                .getString("content");
                         addResponse(result.trim());
                     } catch (JSONException e) {
                         e.printStackTrace();

@@ -1,4 +1,4 @@
-package com.proyectos.talkingparrot;
+package com.proyectos.talkingparrot.Util;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.proyectos.talkingparrot.R;
 
 import java.util.List;
 

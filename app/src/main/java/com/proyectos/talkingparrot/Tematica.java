@@ -1,18 +1,23 @@
 package com.proyectos.talkingparrot;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.proyectos.talkingparrot.FrgTematica.FrgAudioTematica;
+import com.proyectos.talkingparrot.FrgTematica.FrgChtTematica;
 
 public class Tematica extends AppCompatActivity {
 
@@ -50,7 +55,9 @@ public class Tematica extends AppCompatActivity {
                 ClipData clipData = clipboard.getPrimaryClip();
                 ClipData.Item item = clipData.getItemAt(0);
                 String copiedText = item.getText().toString();
+
                 Toast.makeText(Tematica.this, copiedText, Toast.LENGTH_SHORT).show();
+
             }
         });
     }

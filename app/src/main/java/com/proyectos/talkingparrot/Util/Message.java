@@ -1,4 +1,4 @@
-package com.proyectos.talkingparrot;
+package com.proyectos.talkingparrot.Util;
 
 public class Message {
     public static String SENT_BY_ME = "me";
