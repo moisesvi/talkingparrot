@@ -5,10 +5,325 @@
     android:layout_height="match_parent"
     tools:context=".TemasFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="temas"
-        android:layout_gravity="center"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:text="Preferred Texts"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_margin="40dp"
+                    android:textStyle="bold"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="25dp"
+                    android:textSize="20dp"
+                    android:text="My day"
+                    android:layout_margin="20dp"
+                    android:textStyle="bold"
+                    ></TextView>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:background="#29E1ED"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp"
+                    >
+
+                    <TextView
+                        android:layout_margin="20dp"
+                        android:layout_width="330dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:text="First, I wake up. Then, I get dressed. I walk to school. I do not ride a bike. I do not ride the bus. I like to go to school. It rains. I do not like rain. I eat lunch. I eat a sandwich and an apple.
+I play outside. I like to play. I read a book. I like to read books. I walk home. I do not like walking home. My mother cooks soup for dinner. The soup is hot. Then, I go to bed. I do not like to go to bed."
+                        ></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_margin="20dp"
+                    android:orientation="horizontal"
+                    android:layout_width="370dp"
+                    android:layout_height="40dp"
+                    >
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="5dp"
+                        android:text=" N1"
+                        android:textSize="20dp"
+                        android:background="#CCCCCC"
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="320dp"
+                        android:layout_height="30dp"
+                        android:text="¿Pregunta 1?"
+                        android:textSize="20dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:layout_margin="20dp"
+                    >
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:text=" IA"
+                        android:background="#CCCCCC"
+                        android:textSize="20dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="90dp"
+                        android:text="RESPUESTA DE LA PREGUNTA DE LA INTELIGENCIA ARTIFICIAL"
+                        android:textSize="20dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_margin="20dp"
+                    android:orientation="horizontal"
+                    android:layout_width="370dp"
+                    android:layout_height="35dp"
+                    >
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="5dp"
+                        android:text=" N2"
+                        android:textSize="20dp"
+                        android:background="#CCCCCC"
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="320dp"
+                        android:layout_height="30dp"
+                        android:text="¿Pregunta 2?"
+                        android:textSize="20dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:layout_margin="20dp"
+                    >
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:text=" IA"
+                        android:background="#CCCCCC"
+                        android:textSize="20dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="90dp"
+                        android:text="RESPUESTA DE LA PREGUNTA DE LA INTELIGENCIA ARTIFICIAL"
+                        android:textSize="20dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                </LinearLayout>
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="25dp"
+                    android:textSize="20dp"
+                    android:text="My Wonderful Family"
+                    android:layout_margin="20dp"
+                    android:textStyle="bold"
+                    ></TextView>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:background="#29E1ED"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp"
+                    >
+
+                    <TextView
+                        android:layout_margin="20dp"
+                        android:layout_width="330dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:text="I live in a house near the mountains. I have two brothers and one sister, and I was born last. My father teaches mathematics, and my mother is a nurse at a big hospital. My brothers are very smart and work hard in school. My sister is a nervous girl, but she is very kind. My grandmother also lives with us. She came from Italy when I was two years old. She has grown old, but she is still very strong. She cooks the best food!
+
+My family is very important to me. We do lots of things together. My brothers and I like to go on long walks in the mountains. My sister likes to cook with my grandmother. On the weekends we all play board games together. We laugh and always have a good time. I love my family very much."
+                        ></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_margin="20dp"
+                    android:orientation="horizontal"
+                    android:layout_width="370dp"
+                    android:layout_height="40dp"
+                    >
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="5dp"
+                        android:text=" N1"
+                        android:textSize="20dp"
+                        android:background="#CCCCCC"
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="320dp"
+                        android:layout_height="30dp"
+                        android:text="¿Pregunta 1?"
+                        android:textSize="20dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:layout_margin="20dp"
+                    >
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:text=" IA"
+                        android:background="#CCCCCC"
+                        android:textSize="20dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="90dp"
+                        android:text="RESPUESTA DE LA PREGUNTA DE LA INTELIGENCIA ARTIFICIAL"
+                        android:textSize="20dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_margin="20dp"
+                    android:orientation="horizontal"
+                    android:layout_width="370dp"
+                    android:layout_height="35dp"
+                    >
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="5dp"
+                        android:text=" N2"
+                        android:textSize="20dp"
+                        android:background="#CCCCCC"
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="320dp"
+                        android:layout_height="30dp"
+                        android:text="¿Pregunta 2?"
+                        android:textSize="20dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:layout_margin="20dp"
+                    >
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:text=" IA"
+                        android:background="#CCCCCC"
+                        android:textSize="20dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="90dp"
+                        android:text="RESPUESTA DE LA PREGUNTA DE LA INTELIGENCIA ARTIFICIAL"
+                        android:textSize="20dp"
+                        android:layout_margin="5dp"
+                        ></TextView>
+
+                </LinearLayout>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            </LinearLayout>
+
+        </ScrollView>
+
 </FrameLayout>
