@@ -111,7 +111,7 @@ public class FrgChtTematica extends Fragment {
         Request request = new Request.Builder()
                 .url("\n" +
                         "https://api.openai.com/v1/chat/completions")
-                .header("Authorization","Bearer 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")
+                .header("Authorization","Bearer "+System.getProperty("myTokenChatgpt"))
                 .post(body)
                 .build();
 
