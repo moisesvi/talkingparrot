@@ -5,21 +5,21 @@
     <item
         android:id="@+id/inicio"
         android:title="Inicio"
-        android:icon="@drawable/baseline_home_24"
+        android:icon="@drawable/hogar"
         />
     <item
         android:id="@+id/temas"
         android:title="Temas"
-        android:icon="@drawable/baseline_home_24"
+        android:icon="@drawable/aplicaciones_anadir"
         />
     <item
         android:id="@+id/chat"
         android:title="Chat"
-        android:icon="@drawable/baseline_home_24"
+        android:icon="@drawable/comentario"
         />
     <item
         android:id="@+id/resultado"
         android:title="Resultado"
-        android:icon="@drawable/baseline_home_24"
+        android:icon="@drawable/gorro_de_graduacion"
        />
 </menu>

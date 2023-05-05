@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "744771359150",
+    "project_id": "talking-parrot-54fe8",
+    "storage_bucket": "talking-parrot-54fe8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744771359150:android:9cdaa92d0baf0cfeacb83f",
+        "android_client_info": {
+          "package_name": "com.proyectos.talkingparrot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744771359150-tt0mbcr6on7sk7var6k7egh4o03u3fhe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.proyectos.talkingparrot",
+            "certificate_hash": "ac0703541f5cc333fea379ab44b811be3948a395"
+          }
+        },
+        {
+          "client_id": "744771359150-1k1lp3ando2ckghl0luim83a5snj0mu8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdlynR8-veMQgm-O2dPzbcNE1YQSvVm7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744771359150-1k1lp3ando2ckghl0luim83a5snj0mu8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

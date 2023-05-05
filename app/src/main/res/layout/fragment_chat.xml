@@ -1,15 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ChatFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="chat"
-        android:layout_gravity="center"/>
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
+      <TextView
+          android:id="@+id/textView2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="20dp"
+          android:gravity="center"
+          android:text="Pantalla de interacción con IA"
+          android:textSize="20sp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingStart="15dp"
+          android:paddingEnd="15dp"
+          app:layout_constraintBottom_toTopOf="@+id/message_edit_text_frg_chat"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent" />
+
+
+      <EditText
+          android:id="@+id/message_edit_text_frg_chat"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:background="@drawable/rounded_corner"
+          android:backgroundTint="@color/md_theme_light_primaryContainer"
+          android:hint="Escribe"
+          android:inputType="text"
+          android:padding="16dp"
+          android:textColor="@color/md_theme_light_scrim"
+          android:textColorHint="@color/md_theme_light_outline"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toStartOf="@+id/send_btn_frg_chat"
+          app:layout_constraintHorizontal_bias="1.0"
+          app:layout_constraintStart_toStartOf="parent" />
+
+      <ImageButton
+          android:id="@+id/send_btn_frg_chat"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:layout_marginEnd="4dp"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:contentDescription="Icono de envio"
+          android:padding="8dp"
+          android:src="@drawable/telegram"
+          app:layout_constraintBottom_toBottomOf="@+id/message_edit_text_frg_chat"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/message_edit_text_frg_chat" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

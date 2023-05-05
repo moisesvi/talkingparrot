@@ -70,20 +70,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //no tocar
+        //no tocar Partes del navegable
         navigation.setOnItemSelectedListener(item -> {
 
             if (item.getItemId() == R.id.inicio){
                 replaceFragment(frgInicio);
             } else if (item.getItemId() == R.id.temas) {
                 replaceFragment(frgTemas);
-                navigation.setVisibility(View.GONE);
+                //navigation.setVisibility(View.GONE);
             } else if (item.getItemId() == R.id.chat) {
                 replaceFragment(frgChat);
-                //ojo
-               //showDialog();
             } else if (item.getItemId() == R.id.resultado) {
                 replaceFragment(frgResultado);
+                showDialog();
             }
 
             return true;
