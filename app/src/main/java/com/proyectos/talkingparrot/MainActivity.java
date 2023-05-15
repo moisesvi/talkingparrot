@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.proyectos.talkingparrot.Data.Create;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
         frgTemas = new TemasFragment();
 
         replaceFragment(frgInicio);
+
+        //estamos creando el tema
+        Create.createTema();
+
 
         //partes del drawer
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
@@ -78,11 +84,12 @@ public class MainActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.temas) {
                 replaceFragment(frgTemas);
                 //navigation.setVisibility(View.GONE);
+                Intent intent = new Intent(this, Tematica.class);
+                startActivity(intent);
             } else if (item.getItemId() == R.id.chat) {
                 replaceFragment(frgChat);
             } else if (item.getItemId() == R.id.resultado) {
                 replaceFragment(frgResultado);
-                showDialog();
             }
 
             return true;

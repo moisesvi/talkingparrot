@@ -26,6 +26,8 @@
             android:name=".Tematica"
             android:exported="true">
 
+
+
         </activity>
         <activity
             android:name=".MainActivity"

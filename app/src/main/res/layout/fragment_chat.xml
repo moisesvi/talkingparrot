@@ -23,6 +23,7 @@
           app:layout_constraintTop_toTopOf="parent" />
 
       <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/recycler_view_frg_chat"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:paddingStart="15dp"
